@@ -402,41 +402,42 @@
 }
 
 .two_block_inline {
-  max-width: 83%;
-  margin: 0 auto;
+  margin: 0 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding-top: 80px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .two_block_inline .three_block {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   color: #fff;
   width: 50%;
+  height: 445px;
   background: #fff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 445px;
 }
 .two_block_inline .three_block .photo_block_1, .two_block_inline .three_block .photo_block_2 {
   position: relative;
   display: inline-block;
-  width: 50%;
+  width: 100%;
+  height: 100%;
+}
+.two_block_inline .three_block .photo_1, .two_block_inline .three_block .photo_2, .two_block_inline .three_block .photo_3 {
+  position: relative;
   height: 100%;
   width: 100%;
-  margin: 1px;
-}
-.two_block_inline .three_block .photo_2, .two_block_inline .three_block .photo_3 {
-  position: relative;
-  width: 100%;
-  display: block;
-  height: 50%;
-}
-.two_block_inline .three_block .photo_2 {
-  margin-bottom: 2px;
+  overflow: hidden;
 }
 .two_block_inline .three_block .photo_1 p, .two_block_inline .three_block .photo_2 p, .two_block_inline .three_block .photo_3 p {
   position: absolute;
@@ -455,18 +456,26 @@
 .two_block_inline .three_block .photo_1:hover p, .two_block_inline .three_block .photo_2:hover p, .two_block_inline .three_block .photo_3:hover p {
   opacity: 0.6;
 }
+.two_block_inline .three_block .photo_2, .two_block_inline .three_block .photo_3 {
+  height: 50%;
+}
 .two_block_inline .three_block .photo {
-  position: absolute;
   width: 100%;
   height: 100%;
-  background: url("../img/blockImg/1.png") center no-repeat;
-  background-size: cover;
-  margin: 1px;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.two_block_inline .three_block .photo:hover {
+.two_block_inline .three_block .photo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1.02);
+          transform: translate(-50%, -50%) scale(1.02);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.two_block_inline .three_block img:hover {
   -webkit-filter: blur(4px);
           filter: blur(4px);
 }

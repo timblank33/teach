@@ -287,36 +287,30 @@
 	}
 }
 .two_block_inline {
-	max-width: 83%;
-	margin: 0 auto;
+	margin: 0 200px;
 	display: flex;
 	padding-top: 80px;
+	justify-content: center;
 	.three_block {
+		position: relative;
 		display: flex;
 		color: #fff;
 		width: 50%;
-		background: #fff;
-		align-items: center;
 		height: 445px;
-		
+		background: #fff;
+		justify-content: center;
+		align-items: center;
 		.photo_block_1, .photo_block_2 {
 			position: relative;
 			display: inline-block;
-			width: 50%;
+			width: 100%;
 			height: 100%;
-			width: 100%;
-			margin: 1px;
-		}
-		.photo_2, .photo_3 {
-			position: relative;
-			width: 100%;
-			display: block;
-			height: 50%;
-		}
-		.photo_2 {
-			margin-bottom: 2px;
 		}
 		.photo_1, .photo_2, .photo_3 {
+			position: relative;
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
 			p {
 				position: absolute;
 				display: flex;
@@ -330,17 +324,23 @@
 				opacity: .6;
 			}
 		}
+		.photo_2, .photo_3 {
+			height: 50%;
+		}
 		.photo {
-			position: absolute;
 			width: 100%;
 			height: 100%;
-			background: url("../img/blockImg/1.png") center no-repeat;
-			background-size: cover;
-			margin: 1px;
 			cursor: pointer;
 			transition: .3s;
 		}
-		& .photo:hover {
+		.photo img {
+			position: absolute;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%,-50%) scale(1.02);
+			transition: .3s;
+		}
+		& img:hover {
 			filter: blur(4px);
 		}
 	}

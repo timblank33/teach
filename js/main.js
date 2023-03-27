@@ -20,10 +20,6 @@ metaT.addEventListener('click', function(e){
 const imgSearch = document.querySelector('.img_search');
 const selectSearch = document.querySelectorAll('.search_select option');
 
-imgSearch.addEventListener('click', function(){
-	console.log(searchInput.value);
-
-});
 const body = document.querySelector('body');
 let sel = document.querySelector("select").addEventListener('change', function (e) {
   if (e.target.value == '1'){
