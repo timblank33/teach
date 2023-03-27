@@ -1,0 +1,347 @@
+@mixin buttons {
+	font-size: 15px;
+	border: none;
+	padding: 14px 26px;
+	border-radius: 5px;
+	color: #fff;
+	background: #666;
+	transition: .3s;
+	&:hover {
+		cursor: pointer;
+		background: rgba(255, 255, 255, 0.2);;
+		transition: .3s;
+	}
+	
+}
+@mixin gradient_text {
+	background-image: linear-gradient(90deg,#FFD800, #FF9F00FF 60%);
+		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent;
+}
+.wrapper {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	color: #fff;
+	font-family: 'Noto Sans Lao', sans-serif;
+	overflow: hidden;
+	.gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(110deg,  rgba(0,0,0,.6) 40%, rgba(255,255,255,.6) 85%);
+	z-index: -2;
+	}
+	.header__video {
+		display: block;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		z-index: -2;
+	} 
+}
+.header {
+	position: relative;
+	padding-top: 45px;
+	padding-left: 95px;
+	display: flex;
+	align-items: center;
+	img {
+		float: left;
+		transform: scale(1.1);
+		height: 100%;
+		}
+	.nav {
+		margin: auto 0;
+		margin-left: 62px;
+		}
+		li{
+		display: flex;
+		float: left;
+		margin-right: 44px;
+		font-size: 20px;
+		justify-content: center;
+		align-items: center;
+		a{
+			text-decoration: none;
+			outline: none;
+			color: #fff;
+			transition: .3s;
+			&:hover {
+				color: #18B3B0FF;
+			}
+		}
+
+		}
+		.buttons {
+			position: absolute;
+			right: 24px;
+			button {
+				margin-right: 10px;
+				@include buttons;
+				&:first-child {
+					background: #18B3B0FF;
+					padding: 14px 33px;
+					&:hover {
+						cursor: pointer;
+						background: rgba(255, 255, 255, 0.2);;
+						transition: .3s;
+					}
+				}
+				img {
+					margin-right:10px;
+				}
+			}
+		}		
+
+}
+.block_title {
+	margin-left: 84px;
+	padding-top: 10.3%;
+	display: block;
+	width: 500px;
+	line-height: 1.3;
+	letter-spacing: 2px;
+	h1 {
+		font-size: 40px;
+		font-weight: 700;
+		margin: 0;
+		@include gradient_text;
+	}
+	p {
+		margin-top: 20px;
+		line-height: 1.4;
+		letter-spacing: 1px;
+	}
+}
+.block_search {
+	position: relative;
+	margin-top: 45px;
+	margin-left: 84px;
+	max-width: 700px;
+	height: 55px;
+	.search {
+		background: rgba(255,255,255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		width: 89%;
+		height: 100%;
+		border-radius: 10px;
+		outline: none;
+		color: rgba(255, 255, 255, 0.7);
+		padding-left: 22px;
+		&::placeholder {
+			padding-left: 10px;
+			text-align: left;
+			color: rgba(255, 255, 255, 0.7);
+		}
+	}
+	.block_arrow {
+		position: absolute; 
+		display: inline-block;
+		margin-right: 57px;
+		right: 30px;
+		padding: 15px;
+		animation: scale1 .1s linear;
+		transition: 2s;
+
+	}
+	.block_arrow_hover {
+		margin-top: 7px;
+		transform: rotate(180deg);
+		animation: scale .1s linear;
+		transition: 2s;
+	}
+
+	@keyframes scale {
+		0%{
+			transform: scale(1) rotate(180deg);
+			margin-top: 7px;
+			transition: .5s;
+		}
+		50%{
+			transform: scale(1.5) rotate(180deg);
+			margin-top: 7px;
+			transition: .5s;
+		}
+		100%{
+			transform: scale(1) rotate(180deg);
+			margin-top: 7px;
+			transition: .5s;
+		}
+	}
+	@keyframes scale1 {
+		0%{
+			transform: scale(1);
+			margin-top: 0px;
+			transition: .5s;
+		}
+		50%{
+			transform: scale(1.5);
+			margin-top: 0px;
+			transition: .5s;
+		}
+		100%{
+			transform: scale(1);
+			margin-top: 0px;
+			transition: .5s;
+		}
+	}
+	#search_select {
+		position: absolute;
+		display: inline-block;
+		cursor: pointer;
+		background: rgba(255,255,255, 0.0);
+		outline: none;
+		height: 104%;
+		color: rgba(255, 255, 255, 0.7);
+		border-radius: 10px;
+		width: 170px;
+		left: 66%;
+		border: none;
+		padding-left: 20px;
+		background-image: linear-gradient( rgba(255,255,255,0) 35%, rgba(255, 255, 255, 0.7) 36%, rgba(255, 255, 255, 0.7) 67%, rgba(255,255,255,0) 68%);
+		background-position: left;
+		background-size: 1px 100%;
+		background-repeat: repeat-y;
+		-webkit-appearance: none;
+		option {
+			color:#000;
+  			background:rgba(255, 255, 255, 0.7);
+		}
+	}
+	.img_search {
+		position: absolute;
+		margin-left: 15px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		bottom: -1px;
+		height: 100%;
+		transform: scale(1.1);
+		cursor: pointer;
+		img {
+			transition: .3s;
+		}
+		& img:hover {
+			transform: scale(1.1);
+			transition: .3s;
+		}
+	}
+	.meta_title {
+		display: inline-flex;
+		align-items: center;
+		margin-top: 32px;
+		font-size: 13px;
+		width: 110%;
+		p:first-child {
+			margin-right: 16px;
+		}
+		.meta_tags {
+			display: inline-flex;
+		}
+		.meta {
+			display: block;
+			font-size: 11px;
+			margin: 0;
+			margin-right: 7px;
+			padding: 10px 12px;
+			border: 1px solid rgba(255, 255, 255, 0.6);
+			border-radius: 10px;
+			letter-spacing: 1.1px;
+			color: rgba(255, 255, 255, 0.7);
+			cursor: pointer;
+		}
+	}
+	button {
+		margin-top: 40px;
+		border-radius: 15px;
+		border:none;
+		background: #18B3B0FF;
+		color: #fff;
+		padding: 22px 31px;
+		font-size: 18px;
+		letter-spacing: 1px;
+		cursor: pointer;
+		transition: .3s;
+		&:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+	}
+}
+.block_photo {
+	background: #000;
+	display: block;
+	width: 100%;
+	height: 100vh;
+	padding: 60px 0;
+	h2 {
+		padding-top: 107px;
+		display: block;
+		margin: 0 auto;
+		width: 1000px;
+		color: rgba(255, 0, 0, 0.1);
+		font-size: 54px;
+		text-align: center;
+		@include gradient_text;
+	}
+}
+.two_block_inline {
+	max-width: 83%;
+	margin: 0 auto;
+	display: flex;
+	padding-top: 80px;
+	.three_block {
+		display: flex;
+		color: #fff;
+		width: 50%;
+		background: #fff;
+		align-items: center;
+		height: 445px;
+		
+		.photo_block_1, .photo_block_2 {
+			position: relative;
+			display: inline-block;
+			width: 50%;
+			height: 100%;
+			width: 100%;
+			margin: 1px;
+		}
+		.photo_2, .photo_3 {
+			position: relative;
+			width: 100%;
+			display: block;
+			height: 50%;
+		}
+		.photo_2 {
+			margin-bottom: 2px;
+		}
+		.photo_1, .photo_2, .photo_3 {
+			p {
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				width: 100%;
+				bottom: 0;
+				opacity: 0;
+				transition: .3s;
+			}
+			&:hover p{
+				opacity: .6;
+			}
+		}
+		.photo {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: url("../img/blockImg/1.png") center no-repeat;
+			background-size: cover;
+			margin: 1px;
+			cursor: pointer;
+			transition: .3s;
+		}
+		& .photo:hover {
+			filter: blur(4px);
+		}
+	}
+}
