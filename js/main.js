@@ -38,4 +38,4 @@ let sel = document.querySelector("select").addEventListener('change', function (
   }
 
 });
-console.log('sss');
+console.log('ssssssaaa');
